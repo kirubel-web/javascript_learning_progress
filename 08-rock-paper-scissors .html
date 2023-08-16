@@ -28,14 +28,16 @@
       Scissors
     </button>
     <button
-    onclick="
+      onclick="
     
     score.wins = 0;
     score.loses = 0;
     score.ties =0;
     
     "
-    >Reset</button>
+    >
+      Reset
+    </button>
     <p><a href="">Click here</a> to see the final version of the project.</p>
     <script>
       const score = {
@@ -43,7 +45,7 @@
         loses: 0,
         ties: 0,
       };
-
+      console.log(JSON.parse(localStorage.getItem('score')));
       function playGame(playerMove) {
         const computerMove = pickComputerMove();
         let result = "";
@@ -74,19 +76,21 @@
             result = "You Lose";
           }
         }
-        
-      if (result === "You Win") {
-        score.wins += 1;
-      } else if (result === "You Lose") {
-        score.loses += 1;
-      } else if (result === "You Tied") {
-        score.ties += 1;
-      }
-      alert(
+
+        if (result === "You Win") {
+          score.wins += 1;
+        } else if (result === "You Lose") {
+          score.loses += 1;
+        } else if (result === "You Tied") {
+          score.ties += 1;
+        }
+
+        localStorage.setItem('score', JSON.stringify(score));
+        alert(
           `you picked ${playerMove}. computer picked ${computerMove}. ${result}.
 wins: ${score.wins}, Losses: ${score.loses}, Ties: ${score.ties}`
         );
-    }
+      }
       function pickComputerMove() {
         let computerMove = "";
         const randomNumber = Math.random();
