@@ -8,7 +8,7 @@
 <body>
     <script>
         //product is object
-        const product = {
+        /* const product = {
             name: 'socks',
             price: 1090
         };
@@ -21,7 +21,29 @@
         product.newProperty= true;
         console.log(product.newProperty);
         delete product.newProperty;
-        console.log(product);
+        console.log(product); */
+        const product2 ={
+            name: 'shirt',
+            ['delivery-time']: '1-day',
+            //nested object
+            rating : {
+                stars :4.5,
+                counts: 85
+            },
+            //method
+            fun: function()
+            {
+                console.log('function inside object')
+            }
+        };
+        console.log(product2['name']);
+        console.log(product2['delivery-time'])
+        console.log(product2.rating.stars)
+        product2.fun();
+        console.log(typeof console.log)
+
+        //maths.random()
+        //maths is object and random is function altogether they are method
     </script>
 </body>
 </html>
