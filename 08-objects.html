@@ -6,6 +6,7 @@
     <title>Object</title>
 </head>
 <body>
+    
     <script>
         //product is object
         /* const product = {
@@ -22,7 +23,8 @@
         console.log(product.newProperty);
         delete product.newProperty;
         console.log(product); */
-        const product2 ={
+        /* const product2 ={
+
             name: 'shirt',
             ['delivery-time']: '1-day',
             //nested object
@@ -49,7 +51,16 @@
         //json
        console.log( typeof JSON.stringify(product2));
        const jsonString= JSON.stringify(product2);
-      console.log( JSON.parse(jsonString));
+      console.log( JSON.parse(jsonString)); */
+console.log('hello'.length)
+console.log('hello'.toUpperCase());
+
+const object1 = {
+    message: 'hello'
+};
+const object2 = object1; //copy by reference
+object1.message ='GOof';
+console.log(object2);
     </script>
 </body>
 </html>
