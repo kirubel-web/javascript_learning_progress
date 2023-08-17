@@ -27,8 +27,8 @@
     >
       Scissors
     </button>
-<p class="js-result"></p>
-<p class="js-moves"></p>
+    <p class="js-result"></p>
+    <p class="js-moves"></p>
     <p class="js-score"></p>
 
     <button
@@ -104,25 +104,22 @@
 
         localStorage.setItem("score", JSON.stringify(score));
 
-updateScoreElement();
-        document.querySelector('.js-result').innerHTML = result;
-document.querySelector('.js-moves').innerHTML = `you ${playerMove} - ${computerMove} computer`
+        updateScoreElement();
+        document.querySelector(".js-result").innerHTML = result;
+        document.querySelector(
+          ".js-moves"
+        ).innerHTML = `you ${playerMove} - ${computerMove} computer`;
         /* alert(
           `you picked ${playerMove}. computer picked ${computerMove}. ${result}.
 wins: ${score.wins}, Losses: ${score.loses}, Ties: ${score.ties}`
         ); */
       }
-      
-function updateScoreElement(){
-    
-document.querySelector(
-        ".js-score"
-      ).innerHTML = `wins: ${score.wins}, Losses: ${score.loses}, Ties: ${score.ties}`;
 
-}
-
-
-
+      function updateScoreElement() {
+        document.querySelector(
+          ".js-score"
+        ).innerHTML = `wins: ${score.wins}, Losses: ${score.loses}, Ties: ${score.ties}`;
+      }
 
       function pickComputerMove() {
         let computerMove = "";
@@ -135,7 +132,7 @@ document.querySelector(
         } else if (randomNumber < 1) {
           computerMove = "scissor";
         }
-        console.log(computerMove);
+        //console.log(computerMove);
 
         return computerMove;
       }
